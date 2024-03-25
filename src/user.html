@@ -1,0 +1,19 @@
+@if (isLoggedin) {
+	@if (name != '') {
+		<h2> Hello {{name}} </h2>
+	} @else {
+		<h2> Hello Stranger :) </h2>
+	}
+	<body> your channels are: 
+	@for (channel of channelsJoined; track channel.id) {
+		<p> - Channel "{{channel.name}}" <\p>
+	}
+	</body>
+}
+@else 
+{
+	<h2> Please log in </h2>
+	<button (click)="logInNow()">
+		log in now
+	</button>
+}
