@@ -26,7 +26,10 @@
             }
           },
           "options": {
-            "assets": [],
+            "assets": [
+				"src/assets/",
+				"src/assets/basement.jpg"
+			],
             "index": "src/index.html",
             "browser": "src/main.ts",
             "outputPath": "dist/demo",

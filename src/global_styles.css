@@ -6,8 +6,21 @@
 	text-align: center;
 }
 
+* {
+	background-color: blue;
+}
+
+head {
+	background-color: pink;
+}
+
+img {
+	background-color: transparent;
+}
+
 body {
-	background-color: darkblue;
+	background-color: transparent;
+	position: relative;
 }
 h1 {
 	background-color: lightskyblue;

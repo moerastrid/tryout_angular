@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 import { BanaanComponent } from './app/banaan/banaan.component';
 import { KiwiComponent } from './app/kiwi/kiwi.component';
+
 
 @Component({
 	selector: 'user',
@@ -29,7 +31,7 @@ export class User {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [BanaanComponent, KiwiComponent, User],
+  imports: [BanaanComponent, KiwiComponent, User, NgOptimizedImage],
   templateUrl: './main.html',
 })
 export class App {
