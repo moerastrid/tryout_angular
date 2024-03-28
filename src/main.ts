@@ -4,6 +4,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 import { BanaanComponent } from './app/banaan/banaan.component';
 import { KiwiComponent } from './app/kiwi/kiwi.component';
+import {FormsModule} from '@angular/forms';
 
 
 @Component({
@@ -18,6 +19,7 @@ import { KiwiComponent } from './app/kiwi/kiwi.component';
 		}
 	`,
 	templateUrl: './user.html',
+	imports: [FormsModule],
 })
 export class User {
 	name = '';

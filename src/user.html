@@ -4,7 +4,11 @@
 	} @else {
 		<h2> Hello Stranger :) </h2>
 	}
-	<body> your channels are: 
+	<body> 
+	What is your name? 
+	<input id="nickname" type="text" [(ngModel)]="name" />
+	
+	your channels are: 
 	@for (channel of channelsJoined; track channel.id) {
 		<p> - Channel "{{channel.name}}" <\p>
 	}
