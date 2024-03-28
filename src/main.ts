@@ -4,7 +4,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 import { BanaanComponent } from './app/banaan/banaan.component';
 import { KiwiComponent } from './app/kiwi/kiwi.component';
-import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -29,7 +29,7 @@ export class User {
 		this.isLoggedin = true;
 	};
 	profileForm = new FormGroup({
-    	name : new FormControl(''),
+    	name : new FormControl('', Validators.required),
     	hobby: new FormControl(''),
  	});
 
