@@ -3,7 +3,11 @@
 
 <body>
 	<section > 
-		<h1>Hello from {{ name }}!</h1>
+		@if (name == "Angular") {
+			<h1>Hello from {{ name }}!</h1>
+		} @else {
+			<h1>Hello {{ name }}, welcome to our project page! 🥳</h1>
+		}
 		<a target="_blank" href="https://angular.dev/overview">
 		Learn more about Angular
 		</a>
@@ -11,7 +15,7 @@
 
 	<section > 
 		<img ngSrc="/assets/basement.jpg" alt="basement 3" width="256" height="256" priority />
-		<user /> 
+		<user (submitEvent)="updateName($event)" />
 	</section>
 
 	<app-banaan></app-banaan>

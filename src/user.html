@@ -1,17 +1,35 @@
 @if (isLoggedin) {
-	@if (name != '') {
-		<h2> Hello {{name}} </h2>
+	@if (profileForm.value.name != '') {
+		<h2> Hello {{profileForm.value.name}} </h2>
 	} @else {
 		<h2> Hello Stranger :) </h2>
 	}
 	<body> 
-	What is your name? 
-	<input id="nickname" type="text" [(ngModel)]="name" />
+		<form [formGroup]="profileForm" (ngSubmit)="handleSubmit()">
+			<p> 
+				<label>
+					What is your name? 
+					<input id="nickname" type="text" formControlName="name" />
+				</label>
+			</p>
+			<p>
+				<label>
+					Hi {{profileForm.value.name}}, what are your hobbies?
+					<input id="hobbies" type="text" formControlName="hobby" />
+				</label>
+			</p>
+			<p>
+				<button type="submit">Submit</button>
+			</p>
+		</form>
 	
-	your channels are: 
-	@for (channel of channelsJoined; track channel.id) {
-		<p> - Channel "{{channel.name}}" <\p>
-	}
+		your channels are: 
+		<ul>
+		@for (channel of channelsJoined; track channel.id) {
+			<li> - Channel "{{channel.name}}" </li>
+		}
+		</ul>
+	
 	</body>
 }
 @else 

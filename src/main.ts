@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 import { BanaanComponent } from './app/banaan/banaan.component';
 import { KiwiComponent } from './app/kiwi/kiwi.component';
-import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -19,14 +19,25 @@ import {FormsModule} from '@angular/forms';
 		}
 	`,
 	templateUrl: './user.html',
-	imports: [FormsModule],
+	imports: [ReactiveFormsModule],
 })
 export class User {
-	name = '';
+	// name = '';
 	isLoggedin = false;
 	channelsJoined = [{id: 1, name: "first!"}, {id: 2, name: "our fun channel"}, {id: 9, name: "number nine"}, {id: 2, name: "id's don't need to be unique lol"}];
 	logInNow() {
 		this.isLoggedin = true;
+	};
+	profileForm = new FormGroup({
+    	name : new FormControl(''),
+    	hobby: new FormControl(''),
+ 	});
+
+	@Output() submitEvent = new EventEmitter<string>();
+
+	handleSubmit() {
+		if (this.profileForm.value.name != null)
+			this.submitEvent.emit(this.profileForm.value.name);
 	};
 }
 
@@ -37,7 +48,11 @@ export class User {
   templateUrl: './main.html',
 })
 export class App {
-  name = 'Angular';
+	name = 'Angular';
+
+	updateName(name: string) {
+    	this.name = name;
+	};
 }
 
 bootstrapApplication(App);
