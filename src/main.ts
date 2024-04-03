@@ -1,10 +1,15 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage, TitleCasePipe } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 import { BanaanComponent } from './app/banaan/banaan.component';
+import { GameComponent } from './app/game/game.component';
 import { KiwiComponent } from './app/kiwi/kiwi.component';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
+
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+// import { GameModule } from './app/game/game.module';
 
 
 @Component({
@@ -19,7 +24,7 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angula
 		}
 	`,
 	templateUrl: './user.html',
-	imports: [ReactiveFormsModule],
+	imports: [ReactiveFormsModule, TitleCasePipe],
 })
 export class User {
 	// name = '';
@@ -44,7 +49,7 @@ export class User {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [BanaanComponent, KiwiComponent, User, NgOptimizedImage],
+  imports: [BanaanComponent, GameComponent, KiwiComponent, User, NgOptimizedImage],
   templateUrl: './main.html',
 })
 export class App {

@@ -16,10 +16,11 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2015",
+    "target": "es5",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"]
+    "lib": ["ES2022", "dom"],
+	"types": ["excalibur"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
