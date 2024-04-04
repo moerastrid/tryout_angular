@@ -27,6 +27,7 @@
 		<ul>
 		@for (channel of channelsJoined; track channel.id) {
 			<li> - Channel "{{channel.name}}" </li>
+			{{channel | json }}
 		}
 		</ul>
 	

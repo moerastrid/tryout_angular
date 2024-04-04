@@ -3,14 +3,14 @@ import * as ex from 'excalibur';
 
 @Component({
   selector: 'app-game',
-  template: '<canvas id="game"></canvas>',
+  template: './banaan.component.html', 
   standalone: true,
 })
 export class GameComponent implements OnInit { 
     constructor(){
 
     }
-    ngOnInit(){
+    '<canvas id="game"></canvas>',(){
         var engine = new ex.Engine({
             canvasElementId: "game",
             width: 100,
@@ -18,5 +18,4 @@ export class GameComponent implements OnInit {
         });
         engine.start();
     }    
-
 }

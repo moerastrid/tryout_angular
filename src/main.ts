@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { NgOptimizedImage, TitleCasePipe } from '@angular/common';
+import { NgOptimizedImage, TitleCasePipe, JsonPipe } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 import { BanaanComponent } from './app/banaan/banaan.component';
@@ -8,7 +8,7 @@ import { KiwiComponent } from './app/kiwi/kiwi.component';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 // import { GameModule } from './app/game/game.module';
 
 
@@ -24,7 +24,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 		}
 	`,
 	templateUrl: './user.html',
-	imports: [ReactiveFormsModule, TitleCasePipe],
+	imports: [ReactiveFormsModule, TitleCasePipe, JsonPipe],
 })
 export class User {
 	// name = '';
