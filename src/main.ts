@@ -3,7 +3,6 @@ import { NgOptimizedImage, TitleCasePipe, JsonPipe } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 import { BanaanComponent } from './app/banaan/banaan.component';
-import { GameComponent } from './app/game/game.component';
 import { KiwiComponent } from './app/kiwi/kiwi.component';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -49,7 +48,7 @@ export class User {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [BanaanComponent, GameComponent, KiwiComponent, User, NgOptimizedImage],
+  imports: [BanaanComponent, KiwiComponent, User, NgOptimizedImage],
   templateUrl: './main.html',
 })
 export class App {
